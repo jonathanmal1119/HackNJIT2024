@@ -1,4 +1,9 @@
 from GameLogic.Gamemode import Gamemode
+from FrontEnd.startMenu import startWindow
 
 gm = Gamemode()
-gm.start_game()
+window = startWindow(gm)
+
+
+
+
