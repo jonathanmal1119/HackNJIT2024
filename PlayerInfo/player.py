@@ -1,8 +1,15 @@
-from GameLogic.Interaction import Interact
+# from GameLogic.Gamemode import Gamemode
 
-class Player(Interact):
+class Player():
     
-    def __init__(self):
-        self.money = 0
-        self.ownedItems = []
-    
+    def __init__(self, starting_money : int):    
+        self.money = starting_money
+        self.completed_objectives = []
+        self.workers = []
+        
+    def transact(self, price):
+        if (self.money >= price):
+            self.money -= price
+        else:
+            return False
+
