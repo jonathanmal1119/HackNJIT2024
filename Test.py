@@ -1,6 +1,6 @@
 from GameLogic.Gamemode import Gamemode
-from FrontEnd.startMenu import startWindow
 import threading
+from FrontEnd.ui import GameBoard
 
 gm = Gamemode()
 
@@ -13,7 +13,7 @@ def GM_thread_st():
     thread2.start()
 
 def UI_thread_start():
-    thread = threading.Thread(target=startWindow(GM_thread_st))
+    thread = threading.Thread(target=GameBoard(GM_thread_st))
     thread.daemon = True
     thread.start()
 
