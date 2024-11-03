@@ -1,13 +1,13 @@
 from enum import Enum
 
 class objectives(Enum):
-    Engine1 = 100
-    Engine2 = 200
-    Structure = 300
-    Air_Bag = 400
-    Rudder = 500
-    Carriage = 600
-    Final_Blimp = 1000
+    Engine1 = 10
+    Engine2 = 20
+    Structure = 30
+    Air_Bag = 40
+    Carriage = 50
+    Rudder = 60
+    Final_Blimp = 100
     
 class Objective():
     
@@ -21,3 +21,4 @@ class Objective():
         
     def progress(self, progress_amt):
         self.contributed_parts += progress_amt
+        

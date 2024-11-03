@@ -1,3 +1,4 @@
+from GameLogic.ObjectiveClass import objectives
 
 class Worker():
     
@@ -6,13 +7,18 @@ class Worker():
         self.parts_per_cycle = parts_per_cycle
         self.count = 0
         
-    def think(self,time, gamemode):
+    def upgrade_worker(self):
+        self.work_speed /= 2
         
+    def think(self,time, gamemode):
         if (self.count / gamemode.tick_speed == self.work_speed):
             gamemode.current_objective.progress(self.parts_per_cycle)
-            print(str(self.parts_per_cycle)+" parts Made.")
+            gamemode.current_player.money += 100
+            print(str(self.parts_per_cycle)+" parts Made. " + str(gamemode.current_objective.contributed_parts))
             self.count = 0
             
         self.count += 1
+        
+    
             
             

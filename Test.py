@@ -1,11 +1,13 @@
 from GameLogic.Gamemode import Gamemode
 import threading
 from FrontEnd.ui import GameBoard
+import time
 
 gm = Gamemode()
 
 def start_game_call():
     gm.start_game()
+    
     
 def GM_thread_st():
     thread2 = threading.Thread(target=start_game_call)
@@ -18,3 +20,4 @@ def UI_thread_start():
     thread.start()
 
 UI_thread_start()
+
