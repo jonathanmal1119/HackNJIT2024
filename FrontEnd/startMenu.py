@@ -4,8 +4,9 @@ from ctypes import windll
 from tkinter import font as tkFont
 
 class startWindow():
-    def __init__(self):
+    def __init__(self, start_funt):
         self.main = Tk()
+        self.start_funct = start_funt
         self.main.geometry("500x700")
         self.main.title("SteamsReach")
         windll.shcore.SetProcessDpiAwareness(1)
@@ -42,6 +43,7 @@ class startWindow():
     def startGame(self):
        self.frame.destroy()
        self.titleF.destroy()
+       self.start_funct()
 
     def returnMainWindow(self):
         return self.main
